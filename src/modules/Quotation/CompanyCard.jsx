@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import {Avatar, Icon} from "antd";
 import styled from "styled-components";
 

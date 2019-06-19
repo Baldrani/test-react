@@ -41,6 +41,15 @@ const Quotation = () => {
 
     let lots = (((data || {}).sections || {})[0] || {}).lots
 
+    /* Test to get deeper data */
+    const getNestedObject = (nestedObj, pathArr) => {
+        return pathArr.reduce((obj, key) =>
+            (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
+    }
+
+    const test = getNestedObject(data, ['sections', 0, 'lots', 0, 'lignes', 0, 'locationsDetails', 'locations', 0, 'uuid'])
+    if(test) console.log(test)
+
     return(
         <Div>
             <Row>
